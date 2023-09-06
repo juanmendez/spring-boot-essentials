@@ -18,6 +18,9 @@ class RoomController {
         }
     }
 
+    /**
+     * @GetMapping is a composed annotation that acts as a shortcut for @RequestMapping(method = RequestMethod.GET).
+     */
     @GetMapping
     fun getAllRooms(model: Model): String {
         model.addAttribute(KEY, Rooms)
