@@ -2,6 +2,7 @@ package com.spring.boot.web.roomwebapp.controllers
 
 import com.spring.boot.web.roomwebapp.models.Employee
 import com.spring.boot.web.roomwebapp.models.Position
+import com.spring.boot.web.roomwebapp.services.StaffService
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
@@ -9,15 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping
 
 @Controller
 @RequestMapping("/staff")
-class StaffController {
+class StaffController(val staffService: StaffService) {
     companion object {
         const val KEY = "staff"
-        val STAFF = mutableListOf<Employee>().apply {
-            add(Employee("asdfjklasdf", "Juan", "Mendez", Position.HOUSE_CLEANING.name))
-            add(Employee("q34kj;kdsaf", "John", "Smith", Position.CONCIERGE.name))
-            add(Employee("34j;k9df08", "Ivan", "Franco", Position.FRONT_DESK.name))
-            add(Employee("134kl908ol", "Hans", "Hover", Position.SECURITY.name))
-        }
     }
 
     /**
@@ -25,7 +20,7 @@ class StaffController {
      */
     @GetMapping
     fun getAllStaff(model: Model): String {
-        model.addAttribute(KEY, STAFF)
+        model.addAttribute(KEY, staffService.getAllStaff())
         return KEY
     }
 }
