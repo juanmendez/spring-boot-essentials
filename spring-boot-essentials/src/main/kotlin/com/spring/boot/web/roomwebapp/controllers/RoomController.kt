@@ -1,6 +1,5 @@
 package com.spring.boot.web.roomwebapp.controllers
 
-import com.spring.boot.web.roomwebapp.models.Room
 import com.spring.boot.web.roomwebapp.services.RoomService
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
@@ -21,7 +20,7 @@ class RoomController(val roomService: RoomService) {
      */
     @GetMapping
     fun getAllRooms(model: Model): String {
-        model.addAttribute(KEY, roomService.allRooms)
+        model.addAttribute(KEY, roomService.getAllRooms())
         return KEY
     }
 }

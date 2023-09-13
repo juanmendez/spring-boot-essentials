@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class RoomWebAppApplication
 
 fun main(args: Array<String>) {
-	runApplication<RoomWebAppApplication>(*args)
+    runApplication<RoomWebAppApplication>(*args)
 }

@@ -1,7 +1,5 @@
 package com.spring.boot.web.roomwebapp.controllers
 
-import com.spring.boot.web.roomwebapp.models.Employee
-import com.spring.boot.web.roomwebapp.models.Position
 import com.spring.boot.web.roomwebapp.services.StaffService
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
@@ -20,7 +18,7 @@ class StaffController(val staffService: StaffService) {
      */
     @GetMapping
     fun getAllStaff(model: Model): String {
-        model.addAttribute(KEY, staffService.getAllStaff())
+        model.addAttribute(KEY, staffService.getAllEmployees())
         return KEY
     }
 }
