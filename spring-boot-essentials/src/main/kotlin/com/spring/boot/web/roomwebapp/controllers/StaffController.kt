@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 
 @Controller
 @RequestMapping("/staff")
+@Suppress("unused")
 class StaffController(val staffService: StaffService) {
     companion object {
         const val KEY = "staff"

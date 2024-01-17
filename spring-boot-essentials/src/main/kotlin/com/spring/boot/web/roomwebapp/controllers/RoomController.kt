@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping
 
 @Controller
 @RequestMapping("/rooms")
+@Suppress("unused")
 class RoomController(val roomService: RoomService) {
 
     companion object {
         const val KEY = "rooms"
     }
-
 
     /**
      * @GetMapping is a composed annotation that acts as a shortcut for @RequestMapping(method = RequestMethod.GET).

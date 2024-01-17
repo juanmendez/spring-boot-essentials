@@ -21,16 +21,21 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
-	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    val springBoot = "org.springframework.boot"
+	implementation("$springBoot:spring-boot-starter-thymeleaf")
+	implementation("$springBoot:spring-boot-starter-web")
+	implementation("$springBoot:spring-boot-starter-data-jpa")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.postgresql:postgresql")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     // For spring boot security
-    implementation("org.springframework.boot:spring-boot-starter-security")
+    implementation("$springBoot:spring-boot-starter-security")
+
+    // For producer and consumer
+    implementation("$springBoot:spring-boot-starter-amqp")
+
+    testImplementation("$springBoot:spring-boot-starter-test")
 }
 
 tasks.withType<KotlinCompile> {

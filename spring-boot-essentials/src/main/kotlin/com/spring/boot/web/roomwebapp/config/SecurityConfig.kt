@@ -15,6 +15,7 @@ import org.springframework.security.web.DefaultSecurityFilterChain
  */
 @Configuration
 @EnableWebSecurity
+@Suppress("unused")
 class SecurityConfig {
 
     /**

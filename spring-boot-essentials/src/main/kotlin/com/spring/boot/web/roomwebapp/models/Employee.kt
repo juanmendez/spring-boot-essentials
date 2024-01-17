@@ -15,6 +15,7 @@ import java.util.UUID
  */
 @Entity
 @Table(name = "Employee")
+@Suppress("unused")
 data class Employee(
     @Id
     @Column(name = "EMPLOYEE_ID")
